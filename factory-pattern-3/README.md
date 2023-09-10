@@ -1,0 +1,2 @@
+## Problem Statement:
+You are tasked with designing a document generation system that can create different types of documents, including PDFs and Word documents, each with various formatting options. Users should be able to specify the type of document and its formatting options, and the system should create and display the document accordingly.
