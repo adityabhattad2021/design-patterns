@@ -1,7 +1,7 @@
 
 ## Problem Definition:
 
-The task at hand involves developing a software solution to simplify the creation and modification of custom-built computer systems with various specifications. The objective is to enable efficient management of computer configurations while maintaining flexibility during both the initial assembly and subsequent updates.
+The task at hand involves developing a software solution to simplify the creation and modification of custom-built computer systems with various specifications. The objective is to enable efficient management of computer configurations while maintaining flexibility during the initial assembly.
 
 ### Requirements:
 
