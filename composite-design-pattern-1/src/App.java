@@ -11,7 +11,7 @@ public class App {
 
         IEmployee salesExecutive1 = new Leaf("Vaneet Mishra", "Sales Executive");
         IEmployee salesExecutive2 = new Leaf("Sudeep Bora", "Sales Executive");
-        IEmployee clerk1 = new Leaf("Ravikant Chaturvedi", "Clerk");
+        IEmployee clerk1 = new Leaf("Ravikant Chaturvedi", "Clerk"); 
 
         Composite productionDepartment = new Composite();
         productionDepartment.addEmployee(productionManager);

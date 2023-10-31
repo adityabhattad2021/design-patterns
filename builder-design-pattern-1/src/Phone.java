@@ -14,7 +14,7 @@ public class Phone {
         this.battery = battery;
     }
 
-     public String getOs() {
+    public String getOs() {
         return os;
     }
 
