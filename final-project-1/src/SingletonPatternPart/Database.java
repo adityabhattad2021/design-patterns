@@ -62,7 +62,7 @@ public class Database {
 
     public List<User> getAllFollowersByUser(User user){
         List<User> followers = new ArrayList<>();
-        if(this.userFollowers.get(user.userId).isEmpty()){
+        if(!this.userFollowers.containsKey(user.userId)){
             return followers;
         }
         for (Integer userId : this.userFollowers.get(user.userId)) {
@@ -73,7 +73,7 @@ public class Database {
 
     public List<User> getAllFollowingByUser(User user){
         List<User> following = new ArrayList<>();
-        if(this.userFollowing.get(user.userId).isEmpty()){
+        if(!this.userFollowers.containsKey(user.userId)){
             return following;
         }
         for (Integer userId : this.userFollowing.get(user.userId)) {

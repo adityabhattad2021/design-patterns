@@ -42,6 +42,11 @@ public class DesginPatternApp {
         System.out.println("User not found");   
     }
 
+    public void logoutUser() {
+        this.loggedInUser = null;
+        System.out.println("User logged out");
+    }
+
     public void createPost(String type, String content) {
         if(this.loggedInUser==null){
             System.out.println("Please login first");
