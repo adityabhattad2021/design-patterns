@@ -15,8 +15,6 @@ public class User {
     public User(String username) {
         this.userId = idCounter++;
         this.username = username;
-        Database database = Database.getInstance();
-        database.addUser(this);
     }
 
     public void showAllUserPosts(){
@@ -46,7 +44,7 @@ public class User {
         post.viewPost();
     }
 
-    private void notifyFollowers(Post post){
+    public void notifyFollowers(Post post){
         Database database = Database.getInstance();
         List<User> followers = database.getAllFollowersByUser(this);
         if(followers.isEmpty()){
@@ -56,27 +54,6 @@ public class User {
             System.out.println("Notifying follower: " + follower);
             follower.handleNewPostNotification(this.userId,post);
         }
-    }
-
-    public void createPost(String postType, String content){
-        IPostFactory postFactory;
-        switch (postType) {
-            case "Image":
-                postFactory = new ImagePostFactory();
-                break;
-            case "Video":
-                postFactory = new VideoPostFactory();
-                break;
-            case "Text":
-                postFactory = new TextPostFactory();
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid post type: " + postType);
-        }
-        Post post = postFactory.createPost(this.userId,postType, content);
-        Database database = Database.getInstance();
-        database.addPost(post);
-        this.notifyFollowers(post);
     }
 
     public void feed(){

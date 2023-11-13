@@ -71,6 +71,16 @@ public class Database {
         return followers;
     }
 
+    public List<User> getAllFollowingByUser(User user){
+        List<User> following = new ArrayList<>();
+        if(this.userFollowing.get(user.userId).isEmpty()){
+            return following;
+        }
+        for (Integer userId : this.userFollowing.get(user.userId)) {
+            following.add(this.allUsers.get(userId));
+        }
+        return following;
+    }
 
     public List<Post> getPostsByUser(User user){
         List<Post> posts = new ArrayList<>();
