@@ -26,18 +26,21 @@ public abstract class Post {
         return this.userId;
     }
 
-    public int getUpvotes(){
+    public void upvote(){
+        this.upvotes++;
+    }
+
+    public int getUpvotes() {
         return this.upvotes;
     }
 
-    public LocalDateTime getUploadTimestamp(){
+
+    public LocalDateTime getUploadTimestamp() {
         return this.uploadTimestamp;
     }
- 
-    public abstract String getPostType();
 
     public abstract void viewPost();
 
-    public abstract void upvote();
+    public abstract String getPostType();
     
 }

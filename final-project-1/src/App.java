@@ -1,5 +1,6 @@
 import StrategyPatternPart.DesginPatternApp;
 import StrategyPatternPart.FeedSorter.FeedSorterbyTime;
+import StrategyPatternPart.FeedSorter.FeedSorterbyUpvotes;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -21,7 +22,8 @@ public class App {
 
         app.loginUser("aditya");
         app.createPost("Image", "This is an image post by aditya");
-        app.createPost("Video", "This is a video post by aditya");
+        // This post will have id 2.
+        app.createPost("Video", "This is a video post by aditya (this post has more upvotes)");
         app.createPost("Text", "This is a text post by aditya");
         app.logoutUser();
 
@@ -37,10 +39,11 @@ public class App {
         app.viewFeed(new FeedSorterbyTime());
         System.out.println("######################################################");
         
-        System.out.println("######################################################");
         app.followUser("vivek");
+        app.upvote(2);
+        System.out.println("######################################################");
         System.out.println("Sahil's feed (after following vivek)");
-        app.viewFeed(new FeedSorterbyTime());
+        app.viewFeed(new FeedSorterbyUpvotes());
         System.out.println("######################################################");
         app.logoutUser();
     }

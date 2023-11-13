@@ -21,23 +21,9 @@ public class ImagePost extends Post {
     }
 
     @Override
-    public int getUpvotes() {
-        return this.upvotes;
-    }
-
-    @Override
-    public LocalDateTime getUploadTimestamp() {
-        return this.uploadTimestamp;
-    }
-
-    @Override
-    public void upvote(){
-        this.upvotes++;
-    }
-
-    @Override
     public String getPostType(){
         return this.postType;
     }
+
 
 }
